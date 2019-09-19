@@ -14,7 +14,7 @@ jobs:
         MASKINBRUKER_PGP_KEY: ${{ secrets.MASKINBRUKER_PGP_KEY }}
       run: |
         echo $MASKINBRUKER_PGP_KEY
-        echo $MASKINBRUKER_PGP_KEY | gpg --import
+        echo "$MASKINBRUKER_PGP_KEY" | gpg --import
         gpg --decrypt ikke_temmelig_hemmelig.yaml.secret
         cat ikke_temmelig_hemmelig.yaml
 
