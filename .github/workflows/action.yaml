@@ -10,6 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
+      env:
+        MASKINBRUKER_PGP_KEY: ${{ secrets.MASKINBRUKER_PGP_KEY }}
       run: |
         echo $MASKINBRUKER_PGP_KEY
         echo $MASKINBRUKER_PGP_KEY | gpg --import
