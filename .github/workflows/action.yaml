@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
+        echo $MASKINBRUKER_PGP_KEY
         echo $MASKINBRUKER_PGP_KEY | gpg --import
         gpg --decrypt ikke_temmelig_hemmelig.yaml.secret
         cat ikke_temmelig_hemmelig.yaml
